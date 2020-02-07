@@ -1,9 +1,10 @@
 import 'dart:math';
 import 'package:drawing_animation/drawing_animation.dart';
 import 'package:flutter/material.dart';
+import 'package:yuvaan/UI/AboutUs.dart';
 import 'package:yuvaan/UI/LandingPage.dart';
 
-void main() => runApp(Home());
+void main() => runApp(AboutUs());
 
 class MyApp extends StatelessWidget {
   @override

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-double leftOffset = 0.0,
-    rightOffset = 0.0,
-    bottomOffset = 0.0,
-    topOffset = 0.0;
+double leftOffset = 0.0, rightOffset = 0.0, bottomOffset = 0.0, topOffset = 0.0;
 
 Function(num) get w => ScreenUtil().setWidth;
 Function(num) get h => ScreenUtil().setHeight;
@@ -32,6 +29,33 @@ class MyStackWidget extends StatelessWidget {
         end: (end != null) ? w(end - rightOffset) : null,
         bottom: (bottom != null) ? h(bottom - bottomOffset) : null,
         child: child);
+  }
+}
+
+class ScrollPage extends StatelessWidget {
+  String header, body;
+  ScrollPage({this.header, this.body});
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (_, __) {
+        var size = __.biggest;
+        return Column(
+          children: <Widget>[
+            SizedBox(
+              width: size.width,
+              height: size.height * 0.3,
+              child: Center(child: Text(header)),
+            ),
+            SizedBox(
+              width: size.width,
+              height: size.height * 0.7,
+              child: Center(child: Text(body)),
+            )
+          ],
+        );
+      },
+    );
   }
 }
 
