@@ -62,6 +62,62 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: Montserrat-Black
+      fonts:
+        - asset: fonts/Montserrat/Montserrat-Black.ttf
+        - asset: fonts/Montserrat/Montserrat-BlackItalic.ttf
+          style: italic
+    - family: Montserrat-Bold
+      fonts:
+        - asset: fonts/Montserrat/Montserrat-Bold.ttf
+        - asset: fonts/Montserrat/Montserrat-BoldItalic.ttf
+          style: italic
+    - family: Montserrat-ExtraBold
+      fonts:
+        - asset: fonts/Montserrat/Montserrat-ExtraBold.ttf
+        - asset: fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf
+          style: italic
+    - family: Montserrat-ExtraLight
+      fonts:
+        - asset: fonts/Montserrat/Montserrat-ExtraLight.ttf
+        - asset: fonts/Montserrat/Montserrat-ExtraLightItalic.ttf
+          style: italic
+    - family: Montserrat-Light
+      fonts:
+        - asset: fonts/Montserrat/Montserrat-Light.ttf
+        - asset: fonts/Montserrat/Montserrat-LightItalic.ttf
+          style: italic
+    - family: Montserrat-Medium
+      fonts:
+        - asset: fonts/Montserrat/Montserrat-Medium.ttf
+        - asset: fonts/Montserrat/Montserrat-MediumItalic.ttf
+          style: italic
+    - family: Montserrat-Regular
+      fonts:
+        - asset: fonts/Montserrat/Montserrat-Regular.ttf
+        - asset: fonts/Montserrat/Montserrat-Italic.ttf
+          style: italic
+    - family: Montserrat-SemiBold
+      fonts:
+        - asset: fonts/Montserrat/Montserrat-SemiBold.ttf
+        - asset: fonts/Montserrat/Montserrat-SemiBoldItalic.ttf
+          style: italic
+    - family: Montserrat-Thin
+      fonts:
+        - asset: fonts/Montserrat/Montserrat-Thin.ttf
+        - asset: fonts/Montserrat/Montserrat-ThinItalic.ttf
+          style: italic
+    - family: AveriaSansLibre-Bold
+      fonts:
+        - asset: fonts/Averia_Sans_Libre/AveriaSansLibre-Bold.ttf
+        - asset: fonts/Averia_Sans_Libre/AveriaSansLibre-BoldItalic.ttf
+          style: italic
+    - family: AveriaSansLibre-Regular
+      fonts:
+        - asset: fonts/Averia_Sans_Libre/AveriaSansLibre-Regular.ttf
+        - asset: fonts/Averia_Sans_Libre/AveriaSansLibre-Italic.ttf
+          style: italic
   # fonts:
   #   - family: Schyler
   #     fonts:

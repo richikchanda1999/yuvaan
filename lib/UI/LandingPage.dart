@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
   }
 }
 
-class MyScaffold extends StatelessWidget with LandingPageStyle{
+class MyScaffold extends StatelessWidget with LandingPageStyle {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 375, height: 812, allowFontScaling: true);
@@ -47,21 +47,67 @@ class MyScaffold extends StatelessWidget with LandingPageStyle{
                 autoPlayCurve: Curves.easeInOut,
                 itemCount: 10,
                 itemBuilder: (_, i) {
-                  return SponsorshipCard(index: i,);
+                  return SponsorshipCard(
+                    index: i,
+                  );
                 }),
           ),
+          MyStackWidget(
+            start: 30,
+            end: 30,
+            top: 400,
+            bottom: 30,
+            child: CarouselSlider.builder(
+                scrollDirection: Axis.horizontal,
+                viewportFraction: 1.0,
+                autoPlay: false,
+                initialPage: 0,
+                autoPlayAnimationDuration: Duration(milliseconds: 800),
+                autoPlayInterval: Duration(milliseconds: 1500),
+                autoPlayCurve: Curves.easeInOut,
+                itemCount: pages.length,
+                itemBuilder: (_, __) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => pages[__]));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(10.0),
+                      margin: const EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(15.0))),
+                      child: Center(
+                        child: Text(
+                          pageTitle[__],
+                          textAlign: TextAlign.center,
+                          style:
+                              TextStyle(fontFamily: "AveriaSansLibre-Bold", fontSize: 25),
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+          )
         ],
       ),
     );
   }
 }
 
-class SponsorshipCard extends StatelessWidget with LandingPageStyle{
+class SponsorshipCard extends StatelessWidget with LandingPageStyle {
   int index;
   SponsorshipCard({this.index = 0});
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(10.0),
+      margin: const EdgeInsets.all(10.0),
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(15.0))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
@@ -69,7 +115,8 @@ class SponsorshipCard extends StatelessWidget with LandingPageStyle{
             width: w(80),
             height: h(90),
             child: Container(
-              child: Image.asset("assets/past_sponsors_logo/${imagePaths[index]}"),
+              child:
+                  Image.asset("assets/past_sponsors_logo/${imagePaths[index]}"),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(sp(10)),
@@ -78,21 +125,11 @@ class SponsorshipCard extends StatelessWidget with LandingPageStyle{
           ),
           Padding(
             padding: EdgeInsets.only(left: w(10), right: w(10)),
-            child: Text(imagePaths[index].substring(0, imagePaths[index].indexOf("."))),
+            child: Text(
+                imagePaths[index].substring(0, imagePaths[index].indexOf("."))),
           )
         ],
       ),
-      margin: EdgeInsets.only(
-          top: h(8), bottom: h(8), left: w(8), right: w(8)),
-      decoration: BoxDecoration(
-          //color: backgroundColor,
-//          boxShadow: <BoxShadow>[
-//            BoxShadow(color: darkerShadow, offset: Offset(2, 2), blurRadius: sp(2)),
-//            BoxShadow(color: lighterShadow, offset: Offset(-2, -2), blurRadius: sp(2))
-//          ],
-          borderRadius:
-          BorderRadius.all(Radius.circular(sp(10)))),
     );
   }
 }
-
