@@ -3,8 +3,10 @@ import 'package:drawing_animation/drawing_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:yuvaan/UI/AboutUs.dart';
 import 'package:yuvaan/UI/LandingPage.dart';
+import 'package:yuvaan/UI/Sponsorship.dart';
+import 'package:yuvaan/UI/VisionAndAim.dart';
 
-void main() => runApp(AboutUs());
+void main() => runApp(Sponsorship());
 
 class MyApp extends StatelessWidget {
   @override

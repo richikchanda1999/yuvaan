@@ -32,6 +32,9 @@ class MyStackWidget extends StatelessWidget {
   }
 }
 
+TextStyle get headerStyle => TextStyle();
+TextStyle get bodyStyle => TextStyle();
+
 class ScrollPage extends StatelessWidget {
   String header, body;
   ScrollPage({this.header, this.body});
@@ -47,11 +50,7 @@ class ScrollPage extends StatelessWidget {
               height: size.height * 0.3,
               child: Center(child: Text(header)),
             ),
-            SizedBox(
-              width: size.width,
-              height: size.height * 0.7,
-              child: Center(child: Text(body)),
-            )
+            Expanded(flex: 1,child: SingleChildScrollView(child: Center(child: Text(body, textAlign: TextAlign.justify,))))
           ],
         );
       },
