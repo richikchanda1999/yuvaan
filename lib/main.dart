@@ -6,7 +6,9 @@ import 'package:yuvaan/UI/LandingPage.dart';
 import 'package:yuvaan/UI/Sponsorship.dart';
 import 'package:yuvaan/UI/VisionAndAim.dart';
 
-void main() => runApp(Sponsorship());
+import 'UI/ContactUs.dart';
+
+void main() => runApp(ContactUs());
 
 class MyApp extends StatelessWidget {
   @override
