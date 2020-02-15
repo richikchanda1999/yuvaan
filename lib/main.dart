@@ -1,6 +1,6 @@
-import 'package:drawing_animation/drawing_animation.dart';
 import 'package:flutter/material.dart';
+import 'package:yuvaan/UI/WelcomeScreen.dart';
 
 import 'UI/LandingPage.dart';
 
-void main() => runApp(Home());
+void main() => runApp(WelcomeScreen());

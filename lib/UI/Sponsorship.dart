@@ -5,7 +5,8 @@ class Sponsorship extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyScaffold(),
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(child: MyScaffold()),
     );
   }
 }
@@ -21,19 +22,17 @@ class _MyScaffoldState extends State<MyScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: PageView(
-          controller: controller,
-          onPageChanged: ((i) {
-            controller.animateToPage(i,
-                duration: Duration(milliseconds: 500),
-                curve: Curves.fastLinearToSlowEaseIn);
-          }),
-          children: <Widget>[
-            ScrollPage(
-              header: "Title Sponsor\n₹18,00,000",
-              body: """As a TITLE sponsor, you will receive:
+      body: PageView(
+        controller: controller,
+        onPageChanged: ((i) {
+          controller.animateToPage(i,
+              duration: Duration(milliseconds: 500),
+              curve: Curves.fastLinearToSlowEaseIn);
+        }),
+        children: <Widget>[
+          ScrollPage(
+            header: "Title Sponsor\n₹6,00,000",
+            body: """As a TITLE sponsor, you will receive:
 • Title sponsor recognition.
 • Four (4) free standing stall for corporate material contribution at numerous key locations
 throughout the campus.
@@ -64,10 +63,10 @@ plateforms.
 • We have created an android app which will conduct surveys regarding brand popularity and
 through data mining, will provide the sponsor with the data regarding their weak points, to
 improve upon.""",
-            ),
-            ScrollPage(
-              header: "Co-title Sponsor\n₹13,00,000",
-              body: """As a CO-TITLE sponsor, you will receive:
+          ),
+          ScrollPage(
+            header: "Co-title Sponsor\n₹3,00,000",
+            body: """As a CO-TITLE sponsor, you will receive:
 • Co-Sponsor recognition
 • Two (2) free standing and premium stall for corporate material contribution.
 • Corporate signage at ten (10) youth festival events and two core platform events .
@@ -92,10 +91,10 @@ plateforms.
 • We have created an android app which will conduct surveys regarding brand popularity and
 through data mining, will provide the sponsor with the data regarding their weak points, to
 improve upon""",
-            ),
-            ScrollPage(
-              header: "Gold Sponsor\n₹7,00,000",
-              body: """As a GOLD sponsor, you will receive:
+          ),
+          ScrollPage(
+            header: "Gold Sponsor\n₹2,00,000",
+            body: """As a GOLD sponsor, you will receive:
 • One (1) free standing stall and one (1) premium stall for corporate material distribution.
 • Corporate signage at Seven (7) youth festival events and one core platform events
 (including audio, visual, logo and advertisement signage).
@@ -114,10 +113,10 @@ through web banners.
 • We have created an android app which will conduct surveys regarding brand popularity and
 through data mining, will provide the sponsor with the data regarding their weak points, to
 improve upon.""",
-            ),
-            ScrollPage(
-              header: "Event Sponsor\n₹4,00,000",
-              body: """As a EVENT-PARTNER sponsor, you will receive:
+          ),
+          ScrollPage(
+            header: "Event Sponsor\n₹1,00,000",
+            body: """As a EVENT-PARTNER sponsor, you will receive:
 • One (1) free standing stall for corporate material distribution.
 • Corporate signage at Five (5) of the youth festival events (including audio, visual, logo and
 advertisement signage). These events include: Battle of Bands, EDM, Celebrity Night, Fashion show,
@@ -137,13 +136,13 @@ Festival organizers.
 • We have created an android app which will conduct surveys regarding
 brand popularity and through data mining, will provide the sponsor with
 the data regarding their weak points, to improve upon.""",
-            ),
-            ScrollPage(
-              header: "Domain Sponsor\n₹2,00,000",
-              body: """As a Merit sponsor, you will receive:
-• One (1) normal stall for corporate material distribution.
+          ),
+          ScrollPage(
+            header: "Domain Sponsor\n₹50,000",
+            body: """As a Merit sponsor, you will receive:
+• One (1) normal stall for corporate material distribution.\n
 • Corporate signage at two (2) of the youth festival events (including audio, visual, logo and
-advertisement signage). Choices include events from the technical, creative, management domain.
+advertisement signage). Choices include events from the technical, creative, management domain.\n
 • Exclusive right to erect a sponsor’s stand, including sole ability to distribute promotional materi-
 als and to engage with sought-after student body face to face and without constraint.
 • Two (2) complimentary tickets to the Festival.
@@ -152,16 +151,15 @@ platforms.
 • Logo and web link on website for 6-month period. Exclusive promotion on website through web
 banners.
 • Quarter page (B/W) advertisement in the Yuvaan souvenir.""",
-            ),
-            ScrollPage(header: "Other ways of contribution", body: """The Yuvaan steering committee gladly welcomes donors of all sizes to
+          ),
+          ScrollPage(header: "Other ways of contribution", body: """The Yuvaan steering committee gladly welcomes donors of all sizes to
 participate in the Festival sponsorship effort. Any potential benefits will vary
 depending upon the details of the contribution. You can also make a monetary
 contribution or provide goods or services in its place, in return for the
 promotional benefits. You can also book a corporate booth for your material
 promotion. Your assistance is not only valued, but needed, and we thank you for
 your aid!""",)
-          ],
-        ),
+        ],
       ),
     );
   }
